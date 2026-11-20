@@ -1,0 +1,3 @@
+# libsodium primitives with our own Noise XX handshake
+
+No mature Kotlin Multiplatform Noise library exists. We therefore use libsodium (through `ionspin/kotlin-multiplatform-libsodium`) for the cryptographic primitives: X25519, ChaCha20-Poly1305 (IETF), SHA-256, HMAC and Ed25519. We implement only the Noise_XX_25519_ChaChaPoly_SHA256 handshake and transport state machine ourselves, once in shared code. We follow the Noise spec and bitchat iOS (public domain). Unit tests check the handshake against known-good bytes from bitchat, because a mismatch fails silently on the wire. We rejected using different native libraries per platform (CryptoKit, noise-java) because that would give two crypto implementations.
