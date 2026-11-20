@@ -8,6 +8,8 @@ An offline chat app for iOS and Android that sends end-to-end encrypted messages
 - **Tests are welcome, but keep them simple.** Write plain unit, integration, performance and security tests against the real code. Don't build mock frameworks, simulators or test-only interfaces. The maintainer also tests by hand on real phones.
 - **Licence is Apache-2.0.** You may read and copy from bitchat iOS (`permissionlesstech/bitchat`, public domain). **Never copy code from bitchat-android** (`permissionlesstech/bitchat-android`, GPL-3.0). Reading it to understand the protocol is fine.
 
+- **Designs live in `design/hushh.figcraft`**, edited through the figCraft MCP server. Whenever that file changes, run `design/export.sh` and commit the regenerated `design/exports/` in the same commit, so the PNGs never drift from the source.
+
 ## Agent skills
 
 ### Issue tracker
