@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "figcraft": {
+      "type": "stdio",
+      "command": "figcraft-cli",
+      "args": [
+        "mcp",
+        "--automation-write-root",
+        "./design"
+      ],
+      "env": {}
+    }
+  }
+}
