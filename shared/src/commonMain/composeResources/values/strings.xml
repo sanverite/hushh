@@ -7,4 +7,9 @@
     <string name="nearby_searching_body">Messages travel phone to phone. The more people open hushh, the further they reach.</string>
     <string name="people_empty_title">No one nearby yet</string>
     <string name="people_empty_body">People show up here when their phone is in range. Star someone to keep them here when they leave.</string>
+    <string name="nearby_count">%1$d nearby</string>
+    <string name="nearby_composer_hint">Message everyone nearby…</string>
+    <string name="nearby_send">Send</string>
+    <string name="people_section_nearby">Nearby now · %1$d</string>
+    <string name="people_status_nearby">Nearby now</string>
 </resources>
