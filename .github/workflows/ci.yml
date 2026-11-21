@@ -2,10 +2,16 @@ name: CI
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 jobs:
   android:
+    # Pushes to main always run CI. PRs run it only from feature/, bugfix/, hotfix/ and chore/ branches.
+    if: >-
+      github.event_name == 'push' ||
+      startsWith(github.head_ref, 'feature/') || startsWith(github.head_ref, 'bugfix/') ||
+      startsWith(github.head_ref, 'hotfix/') || startsWith(github.head_ref, 'chore/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,6 +28,11 @@ jobs:
           path: androidApp/build/outputs/apk/debug/*.apk
 
   ios:
+    # Pushes to main always run CI. PRs run it only from feature/, bugfix/, hotfix/ and chore/ branches.
+    if: >-
+      github.event_name == 'push' ||
+      startsWith(github.head_ref, 'feature/') || startsWith(github.head_ref, 'bugfix/') ||
+      startsWith(github.head_ref, 'hotfix/') || startsWith(github.head_ref, 'chore/')
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4

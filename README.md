@@ -61,7 +61,7 @@ The Xcode project and `Info.plist` are generated from `iosApp/project.yml`. To c
 ./gradlew :shared:allTests
 ```
 
-CI (`.github/workflows/ci.yml`) runs the shared tests and builds the Android APK on Linux, then builds the iOS app on macOS, on every push.
+CI (`.github/workflows/ci.yml`) runs the shared tests and builds the Android APK on Linux, then builds the iOS app on macOS, on pull requests from `feature/`, `bugfix/`, `hotfix/` and `chore/` branches, when the PR is opened and on each new push to it, and on every push to `main` (including PR merges). PRs from other branches, such as `docs/`, skip CI.
 
 ## Project docs
 
