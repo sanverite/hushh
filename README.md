@@ -34,6 +34,35 @@ All screens, in dark and light for both platforms, are in [`design/exports/`](de
 
 The code is written by AI coding agents (Claude Code) and tested by hand on real phones.
 
+## Build and run
+
+The repo has one shared Kotlin Multiplatform module (`shared/`: core and Compose UI) and two thin app targets (`androidApp/` and `iosApp/`). You need JDK 17 for every build.
+
+### Android (8.0+)
+
+You also need the Android SDK (platform 37). Point `ANDROID_HOME` at it, or put `sdk.dir=...` in `local.properties`.
+
+```sh
+./gradlew :androidApp:assembleDebug     # APK in androidApp/build/outputs/apk/debug/
+./gradlew :androidApp:installDebug      # install on a connected phone (USB debugging on)
+```
+
+Or open the repo root in Android Studio and run `androidApp`.
+
+### iOS (16+)
+
+You also need a Mac with Xcode. Open `iosApp/iosApp.xcodeproj`, choose your team under Signing & Capabilities, pick your iPhone and press Run. Xcode builds the shared Kotlin framework through Gradle, so `java` must be on the `PATH` that Xcode sees (or set `JAVA_HOME`).
+
+The Xcode project and `Info.plist` are generated from `iosApp/project.yml`. To change them, edit that file and run `xcodegen` in `iosApp/` (`brew install xcodegen`), then commit the regenerated files.
+
+### Tests
+
+```sh
+./gradlew :shared:allTests
+```
+
+CI (`.github/workflows/ci.yml`) runs the shared tests and builds the Android APK on Linux, then builds the iOS app on macOS, on every push.
+
 ## Project docs
 
 - **Spec:** [issue #1](https://github.com/sanverite/hushh/issues/1), broken into build tickets as its sub-issues.

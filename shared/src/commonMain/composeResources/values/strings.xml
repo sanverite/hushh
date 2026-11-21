@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_logo_letter">h</string>
+    <string name="tab_nearby">Nearby</string>
+    <string name="tab_people">People</string>
+    <string name="tab_settings">Settings</string>
+    <string name="nearby_searching_title">Looking for people nearby…</string>
+    <string name="nearby_searching_body">Messages travel phone to phone. The more people open hushh, the further they reach.</string>
+    <string name="people_empty_title">No one nearby yet</string>
+    <string name="people_empty_body">People show up here when their phone is in range. Star someone to keep them here when they leave.</string>
+</resources>

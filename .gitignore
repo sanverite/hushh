@@ -1,1 +1,16 @@
 .DS_Store
+
+# Gradle / Kotlin
+.gradle/
+.kotlin/
+build/
+local.properties
+
+# IDEs
+.idea/
+*.iml
+
+# Xcode
+xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
