@@ -30,9 +30,18 @@ kotlin {
             implementation(libs.compose.material3)
             implementation(libs.compose.material.icons.core)
             implementation(libs.compose.components.resources)
+            implementation(libs.libsodium)
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.datetime)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(libs.kotlinx.coroutines.test)
+        }
+        // Android host tests run on a desktop JVM; the Android libsodium artifact only bundles
+        // phone builds of the native library, so add the desktop builds from the JVM artifact.
+        getByName("androidHostTest").dependencies {
+            runtimeOnly(libs.libsodium.jvm)
         }
     }
 }
